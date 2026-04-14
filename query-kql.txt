@@ -1,0 +1,4 @@
+StorageBlobLogs
+| where TimeGenerated > ago(24h)
+| where OperationName == "GetBlob"
+| project TimeGenerated, OperationName, ObjectKey, CallerIpAddress
